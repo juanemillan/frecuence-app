@@ -15,7 +15,7 @@ export function BuilderEntry({ onBuild, customR, onSelect }: BuilderEntryProps) 
     <>
       <div style={{ ...S.gl, marginBottom: 13, textAlign: 'center' }}>
         <div style={{ fontSize: 38, marginBottom: 7 }}>🛠️</div>
-        <h3 style={{ color: 'var(--text-primary)', margin: '0 0 5px', fontFamily: "'Outfit',sans-serif", fontWeight: 700 }}>Crea tu rutina</h3>
+        <h3 style={{ color: 'var(--text-primary)', margin: '0 0 5px', fontFamily: 'var(--font-sans)', fontWeight: 700 }}>Crea tu rutina</h3>
         <p style={{ color: 'var(--text-secondary)', fontSize: 13, margin: '0 0 13px', lineHeight: 1.5 }}>
           Selecciona ejercicios del catálogo y define tus series, reps y tiempos.
         </p>

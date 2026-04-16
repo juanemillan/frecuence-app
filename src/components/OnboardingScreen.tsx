@@ -127,7 +127,7 @@ export function OnboardingScreen({ onComplete }: OnboardingScreenProps) {
                   transition={{ type: 'spring', stiffness: 320, damping: 18, delay: 0.1 }}
                   style={{ fontSize: 88, marginBottom: 24, display: 'block' }}
                 >💪</motion.div>
-                <h1 style={{ color: 'var(--text-primary)', fontFamily: "'Outfit',sans-serif", fontSize: 34, fontWeight: 900, margin: '0 0 14px', lineHeight: 1.15, whiteSpace: 'pre-line', letterSpacing: -1 }}>
+                <h1 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-sans)', fontSize: 34, fontWeight: 900, margin: '0 0 14px', lineHeight: 1.15, whiteSpace: 'pre-line', letterSpacing: -1 }}>
                   {'Bienvenido a\nVitaKore'}
                 </h1>
                 <p style={{ color: 'var(--text-secondary)', fontSize: 16, lineHeight: 1.55, margin: '0 auto 32px', maxWidth: 300, whiteSpace: 'pre-line' }}>
@@ -154,7 +154,7 @@ export function OnboardingScreen({ onComplete }: OnboardingScreenProps) {
               <div>
                 <div style={{ textAlign: 'center', marginBottom: 28 }}>
                   <div style={{ fontSize: 56, marginBottom: 14 }}>🎯</div>
-                  <h2 style={{ color: 'var(--text-primary)', fontFamily: "'Outfit',sans-serif", fontSize: 28, fontWeight: 900, margin: '0 0 8px', letterSpacing: -0.5 }}>¿Cuál es tu objetivo?</h2>
+                  <h2 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-sans)', fontSize: 28, fontWeight: 900, margin: '0 0 8px', letterSpacing: -0.5 }}>¿Cuál es tu objetivo?</h2>
                   <p style={{ color: 'var(--text-secondary)', fontSize: 14, margin: 0 }}>Personalizamos tu programa según tu meta.</p>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -176,7 +176,7 @@ export function OnboardingScreen({ onComplete }: OnboardingScreenProps) {
                     >
                       <span style={{ fontSize: 32 }}>{g.emoji}</span>
                       <div>
-                        <div style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: 15, fontFamily: "'Outfit',sans-serif" }}>{g.label}</div>
+                        <div style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: 15, fontFamily: 'var(--font-sans)' }}>{g.label}</div>
                         <div style={{ color: 'var(--text-secondary)', fontSize: 12, marginTop: 2 }}>{g.desc}</div>
                       </div>
                     </motion.button>
@@ -190,7 +190,7 @@ export function OnboardingScreen({ onComplete }: OnboardingScreenProps) {
               <div>
                 <div style={{ textAlign: 'center', marginBottom: 28 }}>
                   <div style={{ fontSize: 56, marginBottom: 14 }}>📊</div>
-                  <h2 style={{ color: 'var(--text-primary)', fontFamily: "'Outfit',sans-serif", fontSize: 28, fontWeight: 900, margin: '0 0 8px', letterSpacing: -0.5 }}>¿Cuánto ejercitas?</h2>
+                  <h2 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-sans)', fontSize: 28, fontWeight: 900, margin: '0 0 8px', letterSpacing: -0.5 }}>¿Cuánto ejercitas?</h2>
                   <p style={{ color: 'var(--text-secondary)', fontSize: 14, margin: 0 }}>Comenzamos desde donde tú estás.</p>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -212,7 +212,7 @@ export function OnboardingScreen({ onComplete }: OnboardingScreenProps) {
                     >
                       <span style={{ fontSize: 32 }}>{l.emoji}</span>
                       <div>
-                        <div style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: 15, fontFamily: "'Outfit',sans-serif" }}>{l.label}</div>
+                        <div style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: 15, fontFamily: 'var(--font-sans)' }}>{l.label}</div>
                         <div style={{ color: 'var(--text-secondary)', fontSize: 12, marginTop: 2 }}>{l.desc}</div>
                       </div>
                     </motion.button>
@@ -229,7 +229,7 @@ export function OnboardingScreen({ onComplete }: OnboardingScreenProps) {
                   transition={{ type: 'spring', stiffness: 320, damping: 16, delay: 0.1 }}
                   style={{ fontSize: 80, marginBottom: 20, display: 'block' }}
                 >🚀</motion.div>
-                <h2 style={{ color: 'var(--text-primary)', fontFamily: "'Outfit',sans-serif", fontSize: 30, fontWeight: 900, margin: '0 0 10px', letterSpacing: -0.5 }}>¡Todo listo!</h2>
+                <h2 style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-sans)', fontSize: 30, fontWeight: 900, margin: '0 0 10px', letterSpacing: -0.5 }}>¡Todo listo!</h2>
                 <p style={{ color: 'var(--text-secondary)', fontSize: 14, marginBottom: 24, lineHeight: 1.55 }}>
                   Basado en tu perfil, te recomendamos empezar con:
                 </p>
@@ -242,7 +242,7 @@ export function OnboardingScreen({ onComplete }: OnboardingScreenProps) {
                     <div style={{ fontSize: 40, marginBottom: 8 }}>
                       {recommendedId === 'starter' ? '🌱' : recommendedId === 'inter' ? '💪' : recommendedId === 'advanced' ? '🔥' : recommendedId === 'maintain' ? '♾️' : '❤️'}
                     </div>
-                    <div style={{ color: 'var(--text-primary)', fontWeight: 800, fontSize: 16, fontFamily: "'Outfit',sans-serif" }}>
+                    <div style={{ color: 'var(--text-primary)', fontWeight: 800, fontSize: 16, fontFamily: 'var(--font-sans)' }}>
                       {ROUTINE_NAMES[recommendedId]}
                     </div>
                     <div style={{ display: 'inline-flex', alignItems: 'center', gap: 5, background: 'var(--color-primary-dim)', border: '1px solid var(--border-medium)', borderRadius: 20, padding: '4px 12px', marginTop: 10 }}>
@@ -289,7 +289,7 @@ export function OnboardingScreen({ onComplete }: OnboardingScreenProps) {
           <motion.button
             onClick={back}
             whileTap={{ scale: 0.94 }}
-            style={{ background: 'none', border: '1px solid var(--border-subtle)', borderRadius: 14, padding: '12px 24px', color: 'var(--text-muted)', cursor: 'pointer', fontSize: 14, fontFamily: "'Outfit',sans-serif", width: '100%' }}
+            style={{ background: 'none', border: '1px solid var(--border-subtle)', borderRadius: 14, padding: '12px 24px', color: 'var(--text-muted)', cursor: 'pointer', fontSize: 14, fontFamily: 'var(--font-sans)', width: '100%' }}
           >
             ← Volver
           </motion.button>
@@ -299,7 +299,7 @@ export function OnboardingScreen({ onComplete }: OnboardingScreenProps) {
         {step === 0 && (
           <button
             onClick={finish}
-            style={{ background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: 13, cursor: 'pointer', fontFamily: "'Outfit',sans-serif", padding: '4px 0' }}
+            style={{ background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: 13, cursor: 'pointer', fontFamily: 'var(--font-sans)', padding: '4px 0' }}
           >
             Saltar configuración
           </button>

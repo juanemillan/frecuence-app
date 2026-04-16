@@ -28,7 +28,7 @@ export function LearnTab() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 11 }}>
           <div style={{ flex: 1 }}>
             <div style={{ color: 'var(--text-muted)', fontSize: 11, textTransform: 'uppercase', letterSpacing: 1, marginBottom: 4 }}>Anatomía Interactiva</div>
-            <h3 style={{ color: 'var(--text-primary)', margin: '0 0 5px', fontSize: 16, fontFamily: "'Outfit',sans-serif", fontWeight: 700 }}>Suelo Pélvico Masculino</h3>
+            <h3 style={{ color: 'var(--text-primary)', margin: '0 0 5px', fontSize: 16, fontFamily: 'var(--font-sans)', fontWeight: 700 }}>Suelo Pélvico Masculino</h3>
             <p style={{ color: 'var(--text-secondary)', fontSize: 12, margin: 0, lineHeight: 1.5 }}>El músculo PC controla la vejiga y la función sexual.</p>
           </div>
           <div style={{ width: 95, flexShrink: 0 }}><PelvicSVG animated /></div>
@@ -54,7 +54,7 @@ export function LearnTab() {
         <div key={t.id} style={{ ...S.gl, marginBottom: 9, cursor: 'pointer' }} onClick={() => setOpen(open === t.id ? null : t.id)}>
           <div style={{ display: 'flex', alignItems: 'center', gap: 11 }}>
             <div style={{ width: 36, height: 36, borderRadius: '50%', background: `${t.color}1a`, border: `1.5px solid ${t.color}44`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 16, flexShrink: 0 }}>{t.icon}</div>
-            <div style={{ flex: 1, color: 'var(--text-primary)', fontWeight: 600, fontSize: 13, fontFamily: "'Outfit',sans-serif" }}>{t.title}</div>
+            <div style={{ flex: 1, color: 'var(--text-primary)', fontWeight: 600, fontSize: 13, fontFamily: 'var(--font-sans)' }}>{t.title}</div>
             <div style={{ color: 'var(--text-muted)', fontSize: 16, transform: open === t.id ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }}>›</div>
           </div>
           {open === t.id && (

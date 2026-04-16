@@ -76,7 +76,7 @@ export function ProgressTab({ logs, streak, totalDays, w7, m30, coins, xp, lv, u
       {/* Level + stats ────────────────────────────────────────────── */}
       <div style={{ ...S.gl, marginBottom: 11 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 11, marginBottom: 10 }}>
-          <div style={{ width: 46, height: 46, borderRadius: '50%', background: 'var(--grad-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 19, fontWeight: 900, color: '#080c14', fontFamily: "'Outfit',sans-serif", boxShadow: '0 0 18px rgba(251,191,36,0.35)', flexShrink: 0 }}>{lv.level}</div>
+          <div style={{ width: 46, height: 46, borderRadius: '50%', background: 'var(--grad-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 19, fontWeight: 900, color: '#080c14', fontFamily: 'var(--font-sans)', boxShadow: '0 0 18px rgba(251,191,36,0.35)', flexShrink: 0 }}>{lv.level}</div>
           <div style={{ flex: 1 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: 12 }}>Nivel {lv.level}</span>
@@ -95,7 +95,7 @@ export function ProgressTab({ logs, streak, totalDays, w7, m30, coins, xp, lv, u
           ].map(s => (
             <div key={s.l} style={{ background: 'rgba(255,255,255,0.04)', borderRadius: 11, padding: '9px 4px' }}>
               <div style={{ color: s.c, display: 'flex', justifyContent: 'center', marginBottom: 3 }}>{s.ic}</div>
-              <div style={{ color: s.c, fontWeight: 800, fontSize: 17, fontFamily: "'Outfit',sans-serif" }}>{s.v}</div>
+              <div style={{ color: s.c, fontWeight: 800, fontSize: 17, fontFamily: 'var(--font-sans)' }}>{s.v}</div>
               <div style={{ color: 'var(--text-muted)', fontSize: 10 }}>{s.l}</div>
             </div>
           ))}
@@ -202,7 +202,7 @@ export function ProgressTab({ logs, streak, totalDays, w7, m30, coins, xp, lv, u
                 }}
               >
                 <div style={{ fontSize: 26, marginBottom: 4 }}>{a.icon}</div>
-                <div style={{ color: ok ? 'var(--color-gold)' : 'var(--text-muted)', fontWeight: 700, fontSize: 12, fontFamily: "'Outfit',sans-serif" }}>{a.name}</div>
+                <div style={{ color: ok ? 'var(--color-gold)' : 'var(--text-muted)', fontWeight: 700, fontSize: 12, fontFamily: 'var(--font-sans)' }}>{a.name}</div>
                 <div style={{ color: 'var(--text-muted)', fontSize: 10, margin: '2px 0' }}>{a.desc}</div>
                 {ok
                   ? <div style={{ display: 'flex', justifyContent: 'center', gap: 5, marginTop: 4 }}>

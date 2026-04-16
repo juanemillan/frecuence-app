@@ -145,7 +145,7 @@ export function WorkoutScreen({ r, snd, onDone, onExit }: WorkoutScreenProps) {
 
           <motion.h2
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.25 }}
-            style={{ color: 'var(--color-gold)', fontSize: 28, fontFamily: "'Outfit',sans-serif", fontWeight: 900, margin: '0 0 6px', letterSpacing: -0.5 }}
+            style={{ color: 'var(--color-gold)', fontSize: 28, fontFamily: 'var(--font-sans)', fontWeight: 900, margin: '0 0 6px', letterSpacing: -0.5 }}
           >¡Rutina Completa!</motion.h2>
 
           <motion.p
@@ -167,7 +167,7 @@ export function WorkoutScreen({ r, snd, onDone, onExit }: WorkoutScreenProps) {
                 style={{ ...S.gl, textAlign: 'center', padding: '16px 10px' }}
               >
                 <div style={{ fontSize: 22, marginBottom: 4 }}>{s.icon}</div>
-                <div style={{ color: 'var(--color-primary)', fontSize: 24, fontWeight: 900, fontFamily: "'Outfit',sans-serif" }}>{s.value}</div>
+                <div style={{ color: 'var(--color-primary)', fontSize: 24, fontWeight: 900, fontFamily: 'var(--font-sans)' }}>{s.value}</div>
                 <div style={{ color: 'var(--text-muted)', fontSize: 11 }}>{s.label}</div>
               </motion.div>
             ))}
@@ -202,7 +202,7 @@ export function WorkoutScreen({ r, snd, onDone, onExit }: WorkoutScreenProps) {
           {I.back()}
         </motion.button>
         <div style={{ textAlign: 'center' }}>
-          <div style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: 13, fontFamily: "'Outfit',sans-serif" }}>{r.name}</div>
+          <div style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: 13, fontFamily: 'var(--font-sans)' }}>{r.name}</div>
           <div style={{ color: 'var(--text-muted)', fontSize: 11 }}>
             Ejercicio {ci + 1} de {r.exs.length}
           </div>
@@ -233,7 +233,7 @@ export function WorkoutScreen({ r, snd, onDone, onExit }: WorkoutScreenProps) {
             style={{ textAlign: 'center', marginBottom: 20 }}
           >
             <div style={{ fontSize: 22, marginBottom: 4 }}>{exDef?.icon ?? '💪'}</div>
-            <h2 style={{ color: 'var(--text-primary)', fontSize: 18, fontFamily: "'Outfit',sans-serif", fontWeight: 800, margin: 0, letterSpacing: -0.2 }}>
+            <h2 style={{ color: 'var(--text-primary)', fontSize: 18, fontFamily: 'var(--font-sans)', fontWeight: 800, margin: 0, letterSpacing: -0.2 }}>
               {exDef?.name ?? ex?.id}
             </h2>
             {exDef?.muscle && (
@@ -282,7 +282,7 @@ export function WorkoutScreen({ r, snd, onDone, onExit }: WorkoutScreenProps) {
           ].map(p => (
             <div key={p.l} style={{ ...S.badge, flexDirection: 'column', gap: 0, padding: '6px 12px', textAlign: 'center' }}>
               <span style={{ color: 'var(--text-muted)', fontSize: 9, textTransform: 'uppercase', letterSpacing: 1 }}>{p.l}</span>
-              <span style={{ color: 'var(--text-primary)', fontSize: 14, fontWeight: 800, fontFamily: "'Outfit',sans-serif" }}>{p.v}</span>
+              <span style={{ color: 'var(--text-primary)', fontSize: 14, fontWeight: 800, fontFamily: 'var(--font-sans)' }}>{p.v}</span>
             </div>
           ))}
         </div>

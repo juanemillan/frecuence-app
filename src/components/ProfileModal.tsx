@@ -59,7 +59,7 @@ export function ProfileModal({ open, onClose, onLogout, user, streak, level, xp,
             {user.picture ? (
               <img src={user.picture} alt={safeName} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             ) : (
-              <span style={{ fontFamily: "'Outfit',sans-serif", fontWeight: 800 }}>{initials || 'VK'}</span>
+              <span style={{ fontFamily: 'var(--font-sans)', fontWeight: 800 }}>{initials || 'VK'}</span>
             )}
           </div>
           <div style={{ fontWeight: 700, fontSize: 20, color: 'var(--text-primary)' }}>{safeName}</div>

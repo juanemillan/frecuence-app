@@ -1,4 +1,5 @@
-import type { Routine, RoutineExercise } from '../data/routines';
+import type { Routine, RoutineExercise, RoutineCategory } from '../data/routines';
+import { CATEGORY_META } from '../data/routines';
 import { EXERCISES } from '../data/exercises';
 import { routineMinutes } from '../utils/helpers';
 import { FontLink } from './FontLink';
@@ -8,6 +9,7 @@ import { S } from '../styles/styles';
 interface NewRoutine {
   name: string;
   exs: RoutineExercise[];
+  category: RoutineCategory;
 }
 
 interface BuildScreenProps {
@@ -33,6 +35,7 @@ export function BuildScreen({ nr, setNr, onSave, onCancel }: BuildScreenProps) {
     if (!nr.name.trim() || !nr.exs.length) return;
     onSave({
       id: `c_${Date.now()}`,
+      category: nr.category,
       name: nr.name,
       emoji: '📋',
       duration: routineMinutes(nr.exs),
@@ -51,7 +54,7 @@ export function BuildScreen({ nr, setNr, onSave, onCancel }: BuildScreenProps) {
       <div style={S.bg}><div style={S.b1} /><div style={S.b2} /><div style={S.b3} /></div>
       <div style={{ ...S.hdr, background: 'rgba(0,0,0,0.5)' }}>
         <button style={S.bk} onClick={onCancel}><I.back /></button>
-        <h2 style={{ color: 'var(--text-primary)', margin: 0, fontSize: 15, fontFamily: "'Outfit',sans-serif", fontWeight: 700 }}>Crear Rutina</h2>
+        <h2 style={{ color: 'var(--text-primary)', margin: 0, fontSize: 15, fontFamily: 'var(--font-sans)', fontWeight: 700 }}>Crear Rutina</h2>
         <div style={{ width: 40 }} />
       </div>
       <div className="anim-in" style={S.scroll}>
@@ -64,6 +67,38 @@ export function BuildScreen({ nr, setNr, onSave, onCancel }: BuildScreenProps) {
             placeholder="Ej: Mi rutina matutina..."
             style={S.inp}
           />
+        </div>
+        {/* Category selector */}
+        <div style={{ ...S.gl, marginBottom: 13, padding: 12 }}>
+          <div style={{ color: 'var(--text-muted)', fontSize: 11, marginBottom: 8, textTransform: 'uppercase', letterSpacing: 1 }}>Categoría</div>
+          <div style={{ display: 'flex', gap: 8 }}>
+            {Object.keys(CATEGORY_META).map((k) => {
+              const key = k as RoutineCategory;
+              const m = CATEGORY_META[key];
+              const active = nr.category === key;
+              return (
+                <button
+                  key={key}
+                  onClick={() => setNr(p => ({ ...p, category: key }))}
+                  style={{
+                    padding: '8px 12px',
+                    borderRadius: 12,
+                    border: active ? '1.5px solid var(--color-primary)' : '1px solid var(--border-subtle)',
+                    background: active ? 'var(--color-primary-dim)' : 'var(--bg-surface)',
+                    color: active ? 'var(--color-primary)' : 'var(--text-primary)',
+                    cursor: 'pointer',
+                    display: 'flex',
+                    gap: 8,
+                    alignItems: 'center',
+                    fontFamily: 'var(--font-sans)'
+                  }}
+                >
+                  <span>{m.emoji}</span>
+                  <span style={{ fontSize: 13, fontWeight: 700 }}>{m.label}</span>
+                </button>
+              );
+            })}
+          </div>
         </div>
 
         {/* Added exercises */}

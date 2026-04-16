@@ -30,7 +30,7 @@ export function RoutinesTab({ allR, onSelect, onBuild, todayLog }: RoutinesTabPr
               <div style={{ fontSize: 28, minWidth: 40, textAlign: 'center' }}>{r.emoji || '📋'}</div>
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
-                  <div style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: 14, fontFamily: "'Outfit',sans-serif" }}>{r.name}</div>
+                  <div style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: 14, fontFamily: 'var(--font-sans)' }}>{r.name}</div>
                   {done && <span style={{ color: '#00d4aa', fontSize: 15 }}>✓</span>}
                 </div>
                 <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap', margin: '5px 0' }}>
@@ -44,7 +44,7 @@ export function RoutinesTab({ allR, onSelect, onBuild, todayLog }: RoutinesTabPr
           </div>
         );
       })}
-      <button style={{ ...S.gl, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, padding: 15, cursor: 'pointer', border: '1px dashed var(--border-faint)', width: '100%', marginTop: 5, color: 'var(--text-secondary)', fontWeight: 600, fontSize: 13, fontFamily: "'Outfit',sans-serif", background: 'var(--bg-tint)' }} onClick={onBuild}>
+      <button style={{ ...S.gl, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, padding: 15, cursor: 'pointer', border: '1px dashed var(--border-faint)', width: '100%', marginTop: 5, color: 'var(--text-secondary)', fontWeight: 600, fontSize: 13, fontFamily: 'var(--font-sans)', background: 'var(--bg-tint)' }} onClick={onBuild}>
         <I.plus /> Crear mi propia rutina
       </button>
     </>

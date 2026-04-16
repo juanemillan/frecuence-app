@@ -3,7 +3,7 @@ import { useLocalStorage } from './hooks/useLocalStorage';
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ROUTINES } from './data/routines';
-import type { Routine, RoutineExercise } from './data/routines';
+import type { Routine, RoutineExercise, RoutineCategory } from './data/routines';
 import { LibraryTab } from './components/LibraryTab';
 import { ACHIEVEMENTS } from './data/achievements';
 import { getLevel } from './utils/helpers';
@@ -43,6 +43,7 @@ interface DayLog {
 interface NewRoutine {
   name: string;
   exs: RoutineExercise[];
+  category: RoutineCategory;
 }
 
 interface AuthUser {
@@ -103,7 +104,7 @@ export default function App() {
   const [activeR, setActiveR] = useLocalStorage<string[]>('vitakore_activeR', []);
   const [theme, setTheme] = useLocalStorage<'light' | 'dark'>('vitakore_theme', 'light');
   const [building, setBuilding] = useState(false);
-  const [newR, setNewR] = useState<NewRoutine>({ name: '', exs: [] });
+  const [newR, setNewR] = useState<NewRoutine>({ name: '', exs: [], category: 'pelvic' });
   const [floats, setFloats] = useState<{ id: number; x: number; y: number; val: number }[]>([]);
   const [toast, setToast] = useState<typeof ACHIEVEMENTS[0] | null>(null);
   const snd = useSound();
@@ -251,7 +252,7 @@ export default function App() {
           >
             <span style={{ fontSize: 32 }}>{toast.icon}</span>
             <div>
-              <div style={{ color: 'var(--color-gold)', fontWeight: 800, fontSize: 12, fontFamily: "'Outfit',sans-serif", letterSpacing: 0.5, textTransform: 'uppercase' }}>¡Logro desbloqueado!</div>
+              <div style={{ color: 'var(--color-gold)', fontWeight: 800, fontSize: 12, fontFamily: 'var(--font-sans)', letterSpacing: 0.5, textTransform: 'uppercase' }}>¡Logro desbloqueado!</div>
               <div style={{ color: 'var(--text-primary)', fontSize: 14, fontWeight: 700 }}>{toast.name}</div>
               <div style={{ color: 'var(--text-secondary)', fontSize: 11 }}>{toast.desc} · +{toast.coins} coins +{toast.xp}XP</div>
             </div>
@@ -291,7 +292,7 @@ export default function App() {
             <WorkoutScreen r={workout} snd={snd} onDone={(ids: string[], e?: React.MouseEvent) => { finish(workout.id, ids, e); setWorkout(null); setSelRoutine(null); }} onExit={() => setWorkout(null)} />
           )}
           {screenId === 'build' && (
-            <BuildScreen nr={newR} setNr={setNewR} onSave={r => { setCustomR(p => [...p, r]); setBuilding(false); setNewR({ name: '', exs: [] }); }} onCancel={() => setBuilding(false)} />
+            <BuildScreen nr={newR} setNr={setNewR} onSave={r => { setCustomR(p => [...p, r]); setBuilding(false); setNewR({ name: '', exs: [], category: 'pelvic' }); }} onCancel={() => setBuilding(false)} />
           )}
           {screenId === 'detail' && selR && (
             <DetailScreen r={selR} onStart={() => setWorkout(selR)} onBack={() => setSelRoutine(null)} todayLog={todayLog} />
@@ -306,7 +307,7 @@ export default function App() {
           <div style={{ color: 'var(--text-muted)', fontSize: 10.5, letterSpacing: 1.2, textTransform: 'uppercase', fontWeight: 600 }}>
             {new Date().toLocaleDateString('es-ES', { weekday: 'long', month: 'long', day: 'numeric' })}
           </div>
-          <div style={{ color: 'var(--text-primary)', fontSize: 18, fontWeight: 800, fontFamily: "'Outfit',sans-serif", letterSpacing: -0.4 }}>
+          <div style={{ color: 'var(--text-primary)', fontSize: 18, fontWeight: 800, fontFamily: 'var(--font-sans)', letterSpacing: -0.4 }}>
             VitaKore
           </div>
         </div>

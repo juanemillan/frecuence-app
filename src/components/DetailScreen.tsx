@@ -27,7 +27,7 @@ export function DetailScreen({ r, onStart, onBack, todayLog }: DetailScreenProps
       <div style={S.bg}><div style={S.b1} /><div style={S.b2} /><div style={S.b3} /></div>
       <div style={{ ...S.hdr, background: 'rgba(0,0,0,0.5)' }}>
         <button style={S.bk} onClick={onBack}><I.back /></button>
-        <h2 style={{ color: 'var(--text-primary)', margin: 0, fontSize: 15, fontFamily: "'Outfit',sans-serif", fontWeight: 700 }}>{r.name}</h2>
+        <h2 style={{ color: 'var(--text-primary)', margin: 0, fontSize: 15, fontFamily: 'var(--font-sans)', fontWeight: 700 }}>{r.name}</h2>
         <div style={{ width: 40 }} />
       </div>
       <div style={S.scroll}>

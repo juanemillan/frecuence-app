@@ -19,7 +19,7 @@ export function Ring({ pct, size = 80, stroke = 7, color = '#00d4aa', label, sub
           style={{ transition: 'stroke-dashoffset 1s cubic-bezier(.22,1,.36,1)' }} />
       </svg>
       <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-        <span style={{ fontSize: size > 80 ? 16 : 12, fontWeight: 800, color: 'var(--text-primary)', fontFamily: "'Outfit',sans-serif" }}>{label || `${pct}%`}</span>
+        <span style={{ fontSize: size > 80 ? 16 : 12, fontWeight: 800, color: 'var(--text-primary)', fontFamily: 'var(--font-sans)' }}>{label || `${pct}%`}</span>
         {sub && <span style={{ fontSize: 7.5, color: 'var(--text-muted)', marginTop: 1, textAlign: 'center', maxWidth: size - 12 }}>{sub}</span>}
       </div>
     </div>

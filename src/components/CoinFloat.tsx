@@ -17,7 +17,7 @@ export function CoinFloat({ x, y, val, onDone }: CoinFloatProps) {
     <div style={{
       position: 'fixed', left: x, top: y, pointerEvents: 'none', zIndex: 999,
       animation: 'floatUp 0.95s ease-out forwards', fontSize: 13, fontWeight: 800,
-      color: '#f7b731', fontFamily: "'Outfit',sans-serif",
+      color: '#f7b731', fontFamily: 'var(--font-sans)',
       textShadow: '0 0 10px rgba(247,183,49,0.9)',
     }}>
       +{val} ✦

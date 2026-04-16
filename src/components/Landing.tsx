@@ -29,7 +29,7 @@ export function Landing({ onGuest, onGoogleToken, googleClientId, guestButtonLab
       style={{ minHeight: '100vh', background: 'var(--bg-base)', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 24 }}
     >
       <motion.div variants={item} transition={{ type: 'spring', stiffness: 380, damping: 28 }} style={{ fontSize: 54, color: 'var(--color-primary)', marginBottom: 12 }}>{I.sparkles()}</motion.div>
-      <motion.h1 variants={item} transition={{ type: 'spring', stiffness: 380, damping: 28 }} style={{ fontFamily: 'Outfit,sans-serif', fontWeight: 800, fontSize: 32, color: 'var(--color-primary)', margin: 0 }}>VitaKore</motion.h1>
+      <motion.h1 variants={item} transition={{ type: 'spring', stiffness: 380, damping: 28 }} style={{ fontFamily: 'var(--font-sans)', fontWeight: 800, fontSize: 32, color: 'var(--color-primary)', margin: 0 }}>VitaKore</motion.h1>
       <motion.div variants={item} transition={{ type: 'spring', stiffness: 340, damping: 30 }} style={{ color: 'var(--text-secondary)', fontSize: 16, margin: '10px 0 28px', textAlign: 'center', maxWidth: 340 }}>
         Tu bitácora de hábitos y salud del core.<br />Entrena, registra y mejora tu bienestar.
       </motion.div>

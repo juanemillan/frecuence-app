@@ -31,7 +31,7 @@ export function LibraryTab({ allR, activeIds, onAdd, onRemove, onSelect }: Libra
     <>
       {/* Header blurb */}
       <div style={{ marginBottom: 14 }}>
-        <div style={{ color: 'var(--text-primary)', fontWeight: 800, fontSize: 17, fontFamily: "'Outfit',sans-serif", letterSpacing: -0.3 }}>
+        <div style={{ color: 'var(--text-primary)', fontWeight: 800, fontSize: 17, fontFamily: 'var(--font-sans)', letterSpacing: -0.3 }}>
           Biblioteca de Rutinas
         </div>
         <p style={{ color: 'var(--text-secondary)', fontSize: 13, margin: '4px 0 0', lineHeight: 1.5 }}>
@@ -50,7 +50,7 @@ export function LibraryTab({ allR, activeIds, onAdd, onRemove, onSelect }: Libra
               : `${activeIds.length} rutina${activeIds.length > 1 ? 's' : ''} en tu plan diario`}
           </div>
         </div>
-        <div style={{ background: 'var(--color-primary)', color: '#fff', borderRadius: '50%', width: 28, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 14, fontFamily: "'Outfit',sans-serif" }}>
+        <div style={{ background: 'var(--color-primary)', color: '#fff', borderRadius: '50%', width: 28, height: 28, display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 800, fontSize: 14, fontFamily: 'var(--font-sans)' }}>
           {activeIds.length}
         </div>
       </div>
@@ -69,7 +69,7 @@ export function LibraryTab({ allR, activeIds, onAdd, onRemove, onSelect }: Libra
               padding: '6px 13px',
               fontSize: 12,
               fontWeight: cat === c.id ? 700 : 500,
-              fontFamily: "'Outfit',sans-serif",
+              fontFamily: 'var(--font-sans)',
               cursor: 'pointer',
               whiteSpace: 'nowrap',
               display: 'flex',
@@ -124,7 +124,7 @@ export function LibraryTab({ allR, activeIds, onAdd, onRemove, onSelect }: Libra
                       </span>
                     )}
                   </div>
-                  <div style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: 14, fontFamily: "'Outfit',sans-serif" }}>{r.name}</div>
+                  <div style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: 14, fontFamily: 'var(--font-sans)' }}>{r.name}</div>
                   <div style={{ display: 'flex', gap: 5, flexWrap: 'wrap', margin: '5px 0' }}>
                     <span style={{ ...S.badge, background: `${r.color}22`, color: r.color }}>{r.level}</span>
                     <span style={S.badge}><I.clk />&nbsp;{mins} min</span>
@@ -139,7 +139,7 @@ export function LibraryTab({ allR, activeIds, onAdd, onRemove, onSelect }: Libra
               <div style={{ marginTop: 12, display: 'flex', gap: 8 }}>
                 <button
                   onClick={() => onSelect(r.id)}
-                  style={{ ...S.bk, flex: 1, height: 36, fontSize: 12, fontWeight: 600, color: 'var(--text-secondary)', fontFamily: "'Outfit',sans-serif", borderRadius: 10 }}
+                  style={{ ...S.bk, flex: 1, height: 36, fontSize: 12, fontWeight: 600, color: 'var(--text-secondary)', fontFamily: 'var(--font-sans)', borderRadius: 10 }}
                 >
                   Ver detalles
                 </button>
@@ -149,11 +149,10 @@ export function LibraryTab({ allR, activeIds, onAdd, onRemove, onSelect }: Libra
                   style={{
                     flex: 1,
                     height: 36,
-                    border: 'none',
                     borderRadius: 10,
                     fontWeight: 700,
                     fontSize: 12,
-                    fontFamily: "'Outfit',sans-serif",
+                    fontFamily: 'var(--font-sans)',
                     cursor: 'pointer',
                     display: 'flex',
                     alignItems: 'center',

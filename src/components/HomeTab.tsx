@@ -54,7 +54,7 @@ export function HomeTab({ logs, streak, totalDays, w7, myRoutines, onSelect, onS
       {/* Level card */}
       <div style={{ ...S.gl, marginBottom: 13, background: 'linear-gradient(135deg,rgba(251,191,36,0.1),rgba(244,114,182,0.07))' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 13 }}>
-          <div style={{ width: 50, height: 50, borderRadius: '50%', background: 'var(--grad-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 21, fontWeight: 900, color: '#080c14', fontFamily: "'Outfit',sans-serif", boxShadow: '0 0 20px rgba(251,191,36,0.4)', flexShrink: 0 }}>{lv.level}</div>
+          <div style={{ width: 50, height: 50, borderRadius: '50%', background: 'var(--grad-gold)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 21, fontWeight: 900, color: '#080c14', fontFamily: 'var(--font-sans)', boxShadow: '0 0 20px rgba(251,191,36,0.4)', flexShrink: 0 }}>{lv.level}</div>
           <div style={{ flex: 1 }}>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <span style={{ color: 'var(--color-gold)', fontWeight: 700, fontSize: 12 }}>Nivel {lv.level}</span>
@@ -116,7 +116,7 @@ export function HomeTab({ logs, streak, totalDays, w7, myRoutines, onSelect, onS
                   <div style={{ display: 'flex', gap: 5, alignItems: 'center', marginBottom: 2 }}>
                     <span style={{ fontSize: 10, color: catMeta.color, fontWeight: 700 }}>{catMeta.emoji} {catMeta.label}</span>
                   </div>
-                  <div style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: 13, fontFamily: "'Outfit',sans-serif", whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{r.name}</div>
+                  <div style={{ color: 'var(--text-primary)', fontWeight: 700, fontSize: 13, fontFamily: 'var(--font-sans)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{r.name}</div>
                   <div style={{ color: 'var(--text-muted)', fontSize: 11 }}>{mins} min · {r.freq}</div>
                 </div>
                 {done ? (
@@ -127,7 +127,7 @@ export function HomeTab({ logs, streak, totalDays, w7, myRoutines, onSelect, onS
                   <motion.button
                     whileTap={{ scale: 0.9 }}
                     onClick={() => onStart(r)}
-                    style={{ background: r.color, border: 'none', borderRadius: 10, color: '#fff', fontWeight: 700, fontSize: 11, fontFamily: "'Outfit',sans-serif", padding: '7px 12px', cursor: 'pointer', flexShrink: 0, boxShadow: `0 4px 14px ${r.color}44` }}
+                    style={{ background: r.color, border: 'none', borderRadius: 10, color: '#fff', fontWeight: 700, fontSize: 11, fontFamily: 'var(--font-sans)', padding: '7px 12px', cursor: 'pointer', flexShrink: 0, boxShadow: `0 4px 14px ${r.color}44` }}
                   >
                     ▶ Start
                   </motion.button>
@@ -155,7 +155,7 @@ export function HomeTab({ logs, streak, totalDays, w7, myRoutines, onSelect, onS
         ].map(s => (
           <div key={s.l} style={{ ...S.gl, textAlign: 'center', padding: '12px 6px' }}>
             <div style={{ fontSize: 17, marginBottom: 3, display: 'flex', justifyContent: 'center', color: s.c }}>{s.ic()}</div>
-            <div style={{ color: s.c, fontSize: 21, fontWeight: 800, fontFamily: "'Outfit',sans-serif" }}>{s.v}</div>
+            <div style={{ color: s.c, fontSize: 21, fontWeight: 800, fontFamily: 'var(--font-sans)' }}>{s.v}</div>
             <div style={{ color: 'var(--text-muted)', fontSize: 10 }}>{s.l}</div>
           </div>
         ))}

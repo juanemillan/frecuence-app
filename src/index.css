@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens v2.0 ─────────────────────────────────────── */
+
+/* ── Light / Zen Cream (default) ──────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg-base:        #f0ebe1;
+  --bg-surface:     rgba(252, 247, 240, 0.88);
+  --bg-surface-alt: rgba(240, 232, 218, 0.75);
+  --bg-elevated:    rgba(255, 252, 248, 0.96);
+
+  /* Brand colors (darker variants for legibility on cream) */
+  --color-primary:      #0891b2;
+  --color-primary-dim:  rgba(8, 145, 178, 0.12);
+  --color-primary-glow: rgba(8, 145, 178, 0.28);
+  --color-accent:       #be185d;
+  --color-accent-dim:   rgba(190, 24, 93, 0.10);
+  --color-gold:         #b45309;
+  --color-gold-dim:     rgba(180, 83, 9, 0.12);
+  --color-red:          #dc2626;
+
+  /* Text */
+  --text-primary:   #1c1917;
+  --text-secondary: rgba(28, 25, 23, 0.62);
+  --text-muted:     rgba(28, 25, 23, 0.36);
+
+  /* Borders */
+  --border-subtle:  rgba(8, 145, 178, 0.15);
+  --border-medium:  rgba(8, 145, 178, 0.30);
+  --border-accent:  rgba(190, 24, 93, 0.20);
+
+  /* Gradients */
+  --grad-primary: linear-gradient(135deg, #0891b2 0%, #6366f1 50%, #be185d 100%);
+  --grad-button:  linear-gradient(135deg, #0891b2 0%, #6366f1 100%);
+  --grad-gold:    linear-gradient(135deg, #b45309 0%, #d97706 100%);
+  --grad-surface: linear-gradient(160deg, rgba(8,145,178,0.07) 0%, rgba(190,24,93,0.04) 100%);
+
+  /* Ambient blobs */
+  --blob-1: rgba(8, 145, 178, 0.12);
+  --blob-2: rgba(99, 102, 241, 0.10);
+  --blob-3: rgba(190, 24, 93, 0.07);
+
+  /* Shell glass (header / nav background) */
+  --nav-glass: rgba(240, 235, 225, 0.92);
+
+  /* Button text */
+  --btn-text: #ffffff;
+
+  /* Neutral surfaces & tracks */
+  --bg-tint:      rgba(28, 25, 23, 0.04);
+  --border-faint: rgba(28, 25, 23, 0.08);
+  --ring-track:   rgba(28, 25, 23, 0.10);
+
+  /* Effects */
+  --blur-glass:  blur(20px) saturate(180%);
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.08), 0 1px 0 rgba(255,255,255,0.90) inset;
+  --shadow-glow: 0 0 30px rgba(8, 145, 178, 0.15);
+  --radius-card: 20px;
+  --radius-pill: 100px;
+}
+
+/* ── Dark Mode ─────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg-base:        #080c14;
+  --bg-surface:     rgba(12, 20, 40, 0.72);
+  --bg-surface-alt: rgba(15, 25, 55, 0.55);
+  --bg-elevated:    rgba(20, 32, 65, 0.85);
+
+  --color-primary:      #6ee7f7;
+  --color-primary-dim:  rgba(110, 231, 247, 0.15);
+  --color-primary-glow: rgba(110, 231, 247, 0.35);
+  --color-accent:       #f472b6;
+  --color-accent-dim:   rgba(244, 114, 182, 0.15);
+  --color-gold:         #fbbf24;
+  --color-gold-dim:     rgba(251, 191, 36, 0.15);
+  --color-red:          #f87171;
+
+  --text-primary:   #f0f4ff;
+  --text-secondary: rgba(200, 215, 255, 0.65);
+  --text-muted:     rgba(160, 180, 220, 0.40);
+
+  --border-subtle:  rgba(110, 231, 247, 0.12);
+  --border-medium:  rgba(110, 231, 247, 0.25);
+  --border-accent:  rgba(244, 114, 182, 0.25);
+
+  --grad-primary: linear-gradient(135deg, #6ee7f7 0%, #818cf8 50%, #f472b6 100%);
+  --grad-button:  linear-gradient(135deg, #6ee7f7 0%, #818cf8 100%);
+  --grad-gold:    linear-gradient(135deg, #fbbf24 0%, #f87171 100%);
+  --grad-surface: linear-gradient(160deg, rgba(110,231,247,0.08) 0%, rgba(244,114,182,0.06) 100%);
+
+  --blob-1: rgba(110, 231, 247, 0.18);
+  --blob-2: rgba(129, 140, 248, 0.18);
+  --blob-3: rgba(244, 114, 182, 0.12);
+
+  --nav-glass: rgba(8, 12, 20, 0.95);
+  --btn-text:  #080c14;
+
+  --bg-tint:      rgba(255, 255, 255, 0.04);
+  --border-faint: rgba(255, 255, 255, 0.08);
+  --ring-track:   rgba(255, 255, 255, 0.10);
+
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.40), 0 1px 0 rgba(255,255,255,0.04) inset;
+  --shadow-glow: 0 0 30px rgba(110, 231, 247, 0.20);
+}
+
+/* ─── Tailwind theme overrides ───────────────────────────────── */
+@theme {
+  --color-primary:  #6ee7f7;
+  --color-accent:   #f472b6;
+  --color-gold:     #fbbf24;
+  --color-base:     #080c14;
+  --font-sans:      "Plus Jakarta Sans", "Outfit", ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+}
+
+/* ─── Base reset ─────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  background: var(--bg-base);
+  min-height: 100vh;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+/* ─── Theme switching transition ────────────────────────────── */
+.theme-transitioning *,
+.theme-transitioning *::before,
+.theme-transitioning *::after {
+  transition-property: background-color, background, color, border-color, box-shadow, fill, stroke !important;
+  transition-duration: 0.4s !important;
+  transition-timing-function: ease !important;
+}
+
+/* ─── Scrollbar ───────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 0; }
+
+/* ─── Selection ──────────────────────────────────────────────── */
+::selection {
+  background: var(--color-primary-dim);
+  color: var(--color-primary);
+}
